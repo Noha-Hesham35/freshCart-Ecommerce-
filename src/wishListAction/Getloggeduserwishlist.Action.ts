@@ -6,7 +6,7 @@ export async function Getwishlist()
     const token = await getMyToken()
     if(!token)
     {
-        throw new Error ("login first")
+        return { data: [] }
     }
     const response = await fetch(`https://ecommerce.routemisr.com/api/v1/wishlist`,
         {
