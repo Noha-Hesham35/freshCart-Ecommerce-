@@ -53,7 +53,6 @@ function OrderCard({ order }: { order: Order }) {
 
   return (
     <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
-      {/* Header */}
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-gray-100 bg-gray-50 px-5 py-4">
         <div>
           <h2 className="text-lg font-bold">Order #{order.id}</h2>
@@ -66,8 +65,6 @@ function OrderCard({ order }: { order: Order }) {
           <Badge done={order.isDelivered} doneText="Delivered" pendingText="On its way" DoneIcon={Package} PendingIcon={Truck} />
         </div>
       </header>
-
-      {/* Items */}
       <ul className="divide-y divide-gray-100 px-5">
         {order.cartItems.map((item) => (
           <li key={item._id} className="flex items-center gap-4 py-4">
@@ -86,8 +83,6 @@ function OrderCard({ order }: { order: Order }) {
           </li>
         ))}
       </ul>
-
-      {/* Footer */}
       <footer className="flex flex-wrap items-end justify-between gap-4 border-t border-gray-100 px-5 py-4">
         <div className="space-y-1.5 text-sm font-semibold text-[#6a7282]">
           {order.shippingAddress?.city && (
